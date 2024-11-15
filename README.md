@@ -5,5 +5,7 @@
 
 Suggestions and pull requests are very welcome!
 
+You can find the ready to use image on Docker Hub at [https://hub.docker.com/r/czanik/syslog-ng](https://hub.docker.com/r/czanik/syslog-ng).
+
 See more in my blog at TBD!
 
