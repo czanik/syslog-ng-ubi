@@ -22,6 +22,10 @@ ADD syslog-ng /etc/sysconfig
 #add a slightly modified syslog-ng configuration
 ADD syslog-ng.conf /etc/syslog-ng/
 
+# add files related to the syslog-ng Prometheus exporter
+ADD sng_exporter.py /usr/local/bin/
+ADD sngexporter.service /usr/lib/systemd/system/
+
 # enable syslog-ng in systemd
 RUN systemctl enable syslog-ng
 
@@ -34,6 +38,8 @@ EXPOSE 601
 EXPOSE 4317
 # rfc5414 + TLS (does not work out of the box)
 EXPOSE 6514
+# syslog-ng Prometheus exporter
+EXPOSE 9577
 
 # start systemd, which starts syslog-ng
 CMD ["/sbin/init"]
